@@ -5,3 +5,5 @@ media.mediadrmservice.enable=true
 # Graphics
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
+
+ro.oem_unlock_supported=1
