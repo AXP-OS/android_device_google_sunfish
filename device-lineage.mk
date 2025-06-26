@@ -18,8 +18,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
-    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 # EUICC
 PRODUCT_COPY_FILES += \
@@ -41,12 +39,9 @@ PRODUCT_PACKAGES += \
 
 # Parts
 PRODUCT_PACKAGES += \
-    GoogleParts
 
 # RCS
 PRODUCT_PACKAGES += \
-    PresencePolling \
-    RcsService
 
 # Touch
 include hardware/google/pixel/touch/device.mk
