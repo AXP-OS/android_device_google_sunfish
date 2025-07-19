@@ -24,6 +24,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
+# CHRE
+$(call soong_config_set,chre,chre_daemon_dsp_library,//vendor/google/sunfish:libadsprpc)
+
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
@@ -40,6 +43,10 @@ PRODUCT_PACKAGES += \
 
 # Lineage Health
 include hardware/google/pixel/lineage_health/device.mk
+
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/sm7150_bms/charge_disable)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -61,11 +68,14 @@ include hardware/google/pixel/touch/device.mk
 
 # CHRE
 PRODUCT_PACKAGES += \
-    chre
+    chre_daemon_msm
 
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
+
+# Display
+$(call soong_config_set,qtidisplay,gralloc_handle_has_reserved_size,true)
 
 # GPS
 PRODUCT_PACKAGES += \
