@@ -253,7 +253,7 @@ CAMERA_COMMON_HWL := true
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=1
+    ro.oem_unlock_supported=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
@@ -274,7 +274,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.sap_silent_pin=1 \
     persist.vendor.radio.manual_nw_rej_ct=1 \
-    persist.rcs.supported=1 \
+    persist.rcs.supported=0 \
     vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.hardware.keystore_desede=true \
     persist.vendor.radio.procedure_bytes=SKIP \
@@ -330,7 +330,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DRM HAL
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey
 
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \

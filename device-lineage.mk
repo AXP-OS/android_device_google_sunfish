@@ -21,8 +21,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
-    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 # CHRE
 $(call soong_config_set,chre,chre_daemon_dsp_library,//vendor/google/sunfish:libadsprpc)
@@ -56,12 +54,9 @@ $(call soong_config_set,livedisplay_sdm,enable_dm,false)
 
 # Parts
 PRODUCT_PACKAGES += \
-    GoogleParts
 
 # RCS
 PRODUCT_PACKAGES += \
-    PresencePolling \
-    RcsService
 
 # Touch
 include hardware/google/pixel/touch/device.mk
